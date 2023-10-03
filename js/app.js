@@ -14210,7 +14210,20 @@ function lightGallery(el, options) {
 "use strict";
 
 
-var _files = __webpack_require__(11);
+// var _files = __webpack_require__(11);
+const cartPages = [
+    "dev",
+];
+
+for (let i = 1; i <= 26; i++) {
+	const pageNumber = i.toString().padStart(2, '0'); // Ensure two-digit format
+	cartPages.push(`swardis/custom-made-katana-${pageNumber}.html`);
+}
+
+cartPages.push(`swardis/custom-made-katana-final.html`)
+
+
+var _files = cartPages;
 
 var _files2 = _interopRequireDefault(_files);
 
@@ -14236,7 +14249,16 @@ function initMarkapMenu() {
   }
 
   for (var i = 1; i < _files2.default.length; i += 1) {
-    nav.innerHTML += "<a href=\"/" + _files2.default[i] + "\">" + i + "-" + _files2.default[i] + "</a>";
+	let stepText;
+
+	if(_files2.default[i] === "swardis/custom-made-katana-final.html"){
+		stepText = `Final Step`;
+	}else{
+		const getFileName = _files2.default[i].match(/custom-made-katana-(\d{2})\.html/)[1];
+		stepText = `Step ${getFileName}`;
+	}
+	
+    nav.innerHTML += "<a href=\"/" + _files2.default[i] + "\">" + i + "-" + stepText + "</a>";
   }
   document.body.appendChild(wrapper);
   var flag = localStorage.getItem("flag") ? JSON.parse(localStorage.getItem("flag")) : false;
