@@ -2,6 +2,7 @@ imagePopupHandler();
 lenghtSelectionHandler();
 collapsHandler();
 cartItemCollapsHandler();
+checkMobileGaps();
 
 $(document).on('scroll',function () {
     if ($(this).scrollTop() >= 40) {
@@ -11,33 +12,25 @@ $(document).on('scroll',function () {
     }
 });
 
-$(document).on("ready", function () {
-    function checkMobileGaps() {
-        // Check if there is a top gap
-        const hasTopGap = window.visualViewport.offsetTop > 0;
+function checkMobileGaps() {
+    // Check if there is a top gap
+    const hasTopGap = window.visualViewport.offsetTop > 0;
 
-        // Check if there is a bottom gap
-        const hasBottomGap = window.visualViewport.offsetBottom > 0;
+    // Check if there is a bottom gap
+    const hasBottomGap = window.visualViewport.offsetBottom > 0;
 
-        // Log the results or perform actions based on the gaps
-        console.log('Top gap:', hasTopGap);
-        console.log('Bottom gap:', hasBottomGap);
+    // Log the results or perform actions based on the gaps
+    console.log('Top gap:', hasTopGap);
+    console.log('Bottom gap:', hasBottomGap);
 
-        // You can perform additional actions based on the presence of gaps
-        if (hasTopGap || hasBottomGap) {
-            // Example: Adjust the layout or styles based on the gaps
-            $('body').addClass('has-gaps');
-        } else {
-            $('body').removeClass('has-gaps');
-        }
+    // You can perform additional actions based on the presence of gaps
+    if (hasTopGap || hasBottomGap) {
+        // Example: Adjust the layout or styles based on the gaps
+        $('body').addClass('has-gaps');
+    } else {
+        $('body').removeClass('has-gaps');
     }
-
-    // Initial check on page load
-    checkMobileGaps();
-
-    // Listen for resize events to detect changes in viewport size
-    window.addEventListener('resize', checkMobileGaps);
-});
+}
 
 var scrollDiv = $('.scroll-to-bottom');
 
