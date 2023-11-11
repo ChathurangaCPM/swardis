@@ -2,8 +2,9 @@ imagePopupHandler();
 lenghtSelectionHandler();
 collapsHandler();
 cartItemCollapsHandler();
-checkMobileGaps();
 
+var lastScrollTop = 0;
+$('body').addClass('scrolling-up');
 $(document).on('scroll',function () {
     if ($(this).scrollTop() >= 40) {
         $(".header-wrapper a.mobile-popup").addClass("active");
@@ -11,28 +12,19 @@ $(document).on('scroll',function () {
         $(".header-wrapper a.mobile-popup").removeClass("active");
     }
 
-    checkMobileGaps();
-});
+    var st = $(this).scrollTop();
 
-function checkMobileGaps() {
-    // Check if there is a top gap
-    const hasTopGap = window.visualViewport.offsetTop > 0;
-
-    // Check if there is a bottom gap
-    const hasBottomGap = window.visualViewport.offsetBottom > 0;
-
-    // Log the results or perform actions based on the gaps
-    console.log('Top gap:', hasTopGap);
-    console.log('Bottom gap:', hasBottomGap);
-
-    // You can perform additional actions based on the presence of gaps
-    if (hasTopGap || hasBottomGap) {
-        // Example: Adjust the layout or styles based on the gaps
-        $('body').addClass('has-gaps');
+    // Check if the user is scrolling up
+    if (st < lastScrollTop) {
+        $('body').addClass('scrolling-up');
+        console.log('scrolling-up add');
     } else {
-        $('body').removeClass('has-gaps');
+        $('body').removeClass('scrolling-up');
+        console.log('scrolling-up remove');
     }
-}
+
+    lastScrollTop = st;
+});
 
 var scrollDiv = $('.scroll-to-bottom');
 
