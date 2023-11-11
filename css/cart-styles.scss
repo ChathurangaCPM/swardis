@@ -32,6 +32,15 @@ body{
     &.hide-overflow{
         overflow: hidden;
     }
+    &.scrolling-up{
+        .custom-made-cart-wrapper {
+            .cart-content-wrapper {
+                .popup-on-mobile{
+                    height: calc(89vh - 146px);
+                }
+            }
+        }
+    }
 }
 
 .com-btn{
@@ -431,7 +440,7 @@ body{
             visibility: hidden;
             transition: all 0.3s ease-in-out;
             box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.12);
-            height: calc(95vh - 146px);
+            height: calc(100vh - 146px);
             .card-main-wrapper{
                 max-height: 600px;
                 overflow-y: auto;
