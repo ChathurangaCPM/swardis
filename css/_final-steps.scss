@@ -54,7 +54,7 @@
                                 padding: 5px;
                                 svg{
                                     transition: all 0.3s ease-in-out;
-                                    fill: $button-background
+                                    fill: $primary-color
                                 }
                                 &:hover{
                                     svg{
@@ -140,6 +140,15 @@
                     }
                     .wrap-row{
                         padding: 10px 20px;
+                        .describ{
+                            .price-edit{
+                                a{
+                                    svg{
+                                        fill: $button-background,
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }

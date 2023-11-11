@@ -7,6 +7,7 @@ $row-back : #F3F6F9;
     color: $text-color;
     background: #fff;
     width: 100%;
+    height: 100%;
     .mob-header{
         padding: 10px;
         background: $disabled-color;
@@ -39,6 +40,10 @@ $row-back : #F3F6F9;
             text-align: center;
             padding: 10vh 20px;
             color: $button-background;
+        }
+
+        .expanded-rows{
+            height: 370px;
         }
         .single-item-row{
             margin-bottom: 10px;
@@ -94,7 +99,7 @@ $row-back : #F3F6F9;
 
             .row-content{
                 padding: 10px;
-                max-height: 160px;
+                max-height: 240px;
                 overflow-y: auto;
                 display: none;
                 .inner-row{
@@ -167,6 +172,7 @@ $row-back : #F3F6F9;
 @media screen and (min-width: 1200px){
     .cart-main-wrapper{
         margin-bottom: 40px;
+        height: auto;
         .mob-header{
             display: none;
         }
@@ -218,6 +224,9 @@ $row-back : #F3F6F9;
             .empty-text{
                 padding: 9vw 10px;
                 font-size: 14px;
+            }
+            .expanded-rows{
+                height: auto;
             }
             .single-item-row{
                 .row-head{
