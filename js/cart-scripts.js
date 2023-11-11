@@ -10,6 +10,8 @@ $(document).on('scroll',function () {
     } else {
         $(".header-wrapper a.mobile-popup").removeClass("active");
     }
+
+    checkMobileGaps();
 });
 
 function checkMobileGaps() {
