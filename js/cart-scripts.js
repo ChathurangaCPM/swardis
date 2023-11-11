@@ -15,7 +15,7 @@ $(document).on('scroll',function () {
         var st = $(this).scrollTop();
     
         // Check if the user is scrolling up
-        if (st < lastScrollTop) {
+        if (st > lastScrollTop) {
             $('body').addClass('scrolling-up');
             console.log('scrolling-up add');
         } else {
