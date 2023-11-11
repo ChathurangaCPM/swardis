@@ -29,14 +29,26 @@ $alert-background: #f6f6f6;
 
 body{
     overflow: visible;
-    &.hide-overflow{
-        overflow: hidden;
-    }
-    &.scrolling-up{
-        .custom-made-cart-wrapper {
-            .cart-content-wrapper {
-                .popup-on-mobile{
-                    height: calc(89vh - 146px);
+    @media screen and (max-width: 992px){
+        &.hide-overflow{
+            overflow: hidden;
+        }
+        &.scrolling-up{
+            .custom-made-cart-wrapper {
+                .content-area {
+                    .expanded-rows{
+                        height: 370px;
+                    }
+                    .single-item-row {
+                        .row-content{
+                            max-height: 240px;
+                        }
+                    }
+                }
+                .cart-content-wrapper {
+                    .popup-on-mobile{
+                        height: calc(100vh - 146px);
+                    }
                 }
             }
         }
@@ -440,7 +452,7 @@ body{
             visibility: hidden;
             transition: all 0.3s ease-in-out;
             box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.12);
-            height: calc(100vh - 146px);
+            height: calc(90vh - 146px);
             .card-main-wrapper{
                 max-height: 600px;
                 overflow-y: auto;
