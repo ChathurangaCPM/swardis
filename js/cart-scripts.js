@@ -4,26 +4,27 @@ collapsHandler();
 cartItemCollapsHandler();
 
 var lastScrollTop = 0;
-$('body').addClass('scrolling-up');
+
 $(document).on('scroll',function () {
     if ($(this).scrollTop() >= 40) {
         $(".header-wrapper a.mobile-popup").addClass("active");
     } else {
         $(".header-wrapper a.mobile-popup").removeClass("active");
     }
-
-    var st = $(this).scrollTop();
-
-    // Check if the user is scrolling up
-    if (st < lastScrollTop) {
-        $('body').addClass('scrolling-up');
-        console.log('scrolling-up add');
-    } else {
-        $('body').removeClass('scrolling-up');
-        console.log('scrolling-up remove');
+    if ($(window).width() < 992){
+        var st = $(this).scrollTop();
+    
+        // Check if the user is scrolling up
+        if (st < lastScrollTop) {
+            $('body').addClass('scrolling-up');
+            console.log('scrolling-up add');
+        } else {
+            $('body').removeClass('scrolling-up');
+            console.log('scrolling-up remove');
+        }
+    
+        lastScrollTop = st;
     }
-
-    lastScrollTop = st;
 });
 
 var scrollDiv = $('.scroll-to-bottom');
@@ -153,7 +154,7 @@ function lenghtSelectionHandler() {
     })
 }
 
-$(document).click(function (event) {
+$(document).on("click", function (event) {
     // Check if the clicked element is not within the target div
     if (!$('.wrap-selection').is(event.target) && !$('.dropdown').is(event.target) && $('.dropdown').has(event.target).length === 0) {
         // This click event occurred outside the div
