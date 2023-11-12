@@ -319,9 +319,7 @@ body{
         }
         .icon{
             width: 15px;
-            display: block;
             height: 15px;
-            display: none;
             img{
                 width: 100%;
                 display: block;
@@ -837,6 +835,9 @@ body{
         .cart-main-wrapper{
             .view-all-button{
                 display: flex;
+                .icon{
+                    display: none;
+                }
             }    
         }
         .header-wrapper{
