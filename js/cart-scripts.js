@@ -100,8 +100,8 @@ $('.selec-input input').on('change', function () {
 
         // Check if content area is available before toggling
         if (contentArea.length > 0) {
-            contentArea.slideDown(); // You can use slideDown or any other method to show the content
-            contentArea.find('textarea').focus(); // Set focus on the textarea
+            contentArea.addClass('active');
+            contentArea.find('textarea').focus();
         }
 
     } else {
@@ -109,7 +109,7 @@ $('.selec-input input').on('change', function () {
 
         // Check if content area is available before toggling
         if (contentArea.length > 0) {
-            contentArea.slideUp(); // You can use slideUp or any other method to hide the content
+            contentArea.removeClass('active'); 
         }
     }
 });
