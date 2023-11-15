@@ -126,7 +126,7 @@
             .header-data{
                 padding: 25px 20px;
                 h5{
-                    font-size: 22px;
+                    font-size: 23px;
                     padding: 0;
                     font-weight: 500;
                 }
@@ -137,10 +137,15 @@
                 .single-item-wrapper{
                     .head-title{
                         padding: 10px 20px;
+                        font-size: 17px;
                     }
                     .wrap-row{
                         padding: 10px 20px;
+                        .item-title{
+                            font-size: 17px;
+                        }
                         .describ{
+                            font-size: 17px;
                             .price-edit{
                                 a{
                                     svg{
